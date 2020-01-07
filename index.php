@@ -14,7 +14,7 @@
 </head>
 
 <body>
-    
+
     <form id="myForm">
         <h2>Aggiungi una nuova stanza</h2>
         <label for="title">Titolo:</label>
@@ -30,9 +30,11 @@
         <input type="text" name="title" value="nuovo titolo"><br>
         <label for="description">Descrizione:</label>
         <input type="text" name="description" value="nuova descrizione"><br>
-        <input type="submit" name="submit" value="modifica configurazione">
+        <label for="id">id: </label>
+            <input type="text" name="id">
+            <input type="submit" name="submit" value="modifica configurazione">
     </form>
-    
+
     <div id="container" class="container">
     </div>
 

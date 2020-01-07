@@ -2,9 +2,10 @@
 
 header('Content-Type: application/json');
 
-list($title, $description) = [
+list($title, $description,$id) = [
     $_POST['title'],
-    $_POST['description']
+    $_POST['description'],
+    $_POST['id']
 ];
 
 if (!$title || !$description) {
@@ -29,11 +30,11 @@ $sql = "
 
       UPDATE configurazioni
       SET title = ? , description = ?
-      WHERE created_at is NULL
+      WHERE id = ?
 
   ";
 $stmt = $conn->prepare($sql);
-$stmt->bind_param("ss", $title, $description);
+$stmt->bind_param("ssi", $title, $description, $id);
 
 $res = $stmt->execute();
 echo json_encode($res);
