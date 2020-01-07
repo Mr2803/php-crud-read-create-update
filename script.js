@@ -63,10 +63,34 @@ function putNewConfigurazione() {
     return false;
 }
 
+function updateConfigurazione() {
+
+    var me = $(this);
+    $.ajax({
+
+        url: "updateConfigurazione.php",
+        method: "POST",
+        data: me.serialize(),
+        success: function (data) {
+            if (data) {
+
+                getConfigurazioni(data);
+            }
+        },
+        error: function (error) {
+
+            console.log("error", error);
+        }
+    });
+
+    return false;
+}
+
 function init() {
 
     getConfigurazioni();
     $("#myForm").submit(putNewConfigurazione);
+    $("#myForm2").submit(updateConfigurazione);
 }
 $(window).ready(init);
 
