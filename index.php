@@ -31,16 +31,16 @@
         <label for="description">Descrizione:</label>
         <input type="text" name="description" value="nuova descrizione"><br>
         <label for="id">id: </label>
-            <input type="text" name="id">
-            <input type="submit" name="submit" value="Modifica configurazione">
+        <input type="text" name="id">
+        <input type="submit" name="submit" value="Modifica configurazione">
     </form>
 
     <form id="myForm3">
         <h2>Elimina una stanza</h2>
-        
-        <label for="title">Stanza da eliminare: </label>
-            <input type="text" name="title">
-            <input type="submit" name="submit" value="Elimina configurazione">
+
+        <label for="id">ID: </label>
+        <input type="text" name="id">
+        <input type="submit" name="submit" value="Elimina configurazione">
     </form>
 
     <div id="container" class="container">
@@ -61,6 +61,7 @@
     <!-- TEMPLATE: MESSAGE MENU -->
     <script id="box-template" type="text/x-handlebars-template">
         <div class="box">
+        <p>[{{ id }}] </p>
         <p>{{ title }} </p>
         <p>{{ description }}</p>
     </div>

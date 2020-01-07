@@ -2,11 +2,11 @@
 
 header('Content-Type: application/json');
 
-list($title) = [
-    $_POST['title']
+list($id) = [
+    $_POST['id']
 ];
 
-if (!$title) {
+if (!$id) {
 
     echo json_encode(-2);
     return;
@@ -26,11 +26,11 @@ if ($conn->connect_errno) {
 
 $sql = "
 
-      DELETE FROM configurazioni WHERE title=?
+      DELETE FROM configurazioni WHERE id=?
 
   ";
 $stmt = $conn->prepare($sql);
-$stmt->bind_param("s",$title);
+$stmt->bind_param("i",$id);
 
 $res = $stmt->execute();
 echo json_encode($res);
