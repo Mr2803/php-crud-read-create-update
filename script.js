@@ -1,6 +1,6 @@
 function reset() {
 
-    var target = $("#container");
+    var target = $("#global_container");
     target.html('');
 }
 
@@ -8,7 +8,7 @@ function reset() {
 function printConfigurazioni(data) {
 
     reset();
-     var target = $("#container");
+    var target = $("#global_container");
 
     var template = $("#box-template").html();
     var compiled = Handlebars.compile(template);

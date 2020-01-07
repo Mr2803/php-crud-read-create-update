@@ -8,42 +8,67 @@
     <link href="https://fonts.googleapis.com/css?family=Lato:300,400,700" rel="stylesheet">
     <!-- FONT: FONTAWESOME -->
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css">
+    <!-- CDN BOOTSTRAP 4 -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+
     <!-- CSS: MY STYLE -->
     <link rel="stylesheet" href="style/style.css">
     <title>php-crud-read-create-update</title>
 </head>
 
 <body>
+    <div class="container-fluid mb-5">
+        <div class="row">
+            <div class="col-4">
+                <h2>Aggiungi nuova configurazione</h2>
+                <form id="myForm" class="d-flex flex-column justify-content-between">
+                    <div class="global">
 
-    <form id="myForm">
-        <h2>Aggiungi una nuova stanza</h2>
-        <label for="title">Titolo:</label>
-        <input type="text" name="title" value="nuovo titolo"><br>
-        <label for="description">Descrizione:</label>
-        <input type="text" name="description" value="nuova descrizione"><br>
-        <input type="submit" name="submit" value="Nuova configurazione">
-    </form>
+                        <label for="title">Titolo:</label>
+                        <input type="text" name="title" value=""><br>
+                    </div>
+                    <div class="global">
 
-    <form id="myForm2">
-        <h2>Modifica una stanza</h2>
-        <label for="title">Titolo:</label>
-        <input type="text" name="title" value="nuovo titolo"><br>
-        <label for="description">Descrizione:</label>
-        <input type="text" name="description" value="nuova descrizione"><br>
-        <label for="id">id: </label>
-        <input type="text" name="id">
-        <input type="submit" name="submit" value="Modifica configurazione">
-    </form>
+                        <label for="description">Descrizione:</label>
+                        <input type="text" name="description" value=""><br>
+                    </div>
+                    <button class="btn btn-primary" type="submit">Nuova configurazione</button>
+                </form>
+            </div>
+            <div class="col-4">
+                <h2>Modifica una configurazione</h2>
+                <form id="myForm2" class="d-flex flex-column justify-content-between">
+                    <div class="global">
+                        <label for="title">Titolo:</label>
+                        <input type="text" name="title" value=""><br>
+                    </div>
+                    <div class="global">
 
-    <form id="myForm3">
-        <h2>Elimina una stanza</h2>
+                        <label for="description">Descrizione:</label>
+                        <input type="text" name="description" value=""><br>
+                    </div>
+                    <div class="global">
 
-        <label for="id">ID: </label>
-        <input type="text" name="id">
-        <input type="submit" name="submit" value="Elimina configurazione">
-    </form>
+                        <label for="id">ID: </label>
+                        <input type="text" name="id">
+                    </div>
+                    <button class="btn btn-success" type="submit">Aggiorna configurazione</button>
+                </form>
+            </div>
+            <div class="col-4">
+                <h2>Elimina una configurazione</h2>
+                <form id="myForm3" class="d-flex flex-column justify-content-between">
+                    <div class="global">
 
-    <div id="container" class="container">
+                        <label for="id">ID: </label>
+                        <input type="text" name="id">
+                    </div>
+                    <button class="btn btn-danger" type="submit">Elimina configurazione</button>
+                </form>
+            </div>
+        </div>
+    </div>
+    <div id="global_container">
     </div>
 
 
@@ -60,12 +85,26 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.1.0/handlebars.min.js" charset="utf-8"></script>
     <!-- TEMPLATE: MESSAGE MENU -->
     <script id="box-template" type="text/x-handlebars-template">
+    <table class="table">
+        <thead>
+            <tr>
+            <th scope="col">ID</th>
+            <th scope="col">TITOLO</th>
+            <th scope="col">DESCRIZIONE</th>
+            </tr>
+        </thead>
         <div class="box">
-        <p>[{{ id }}] </p>
-        <p>{{ title }} </p>
-        <p>{{ description }}</p>
-    </div>
-</script>
+        <tbody>
+            <tr>
+            <th scope="row">[{{ id }}] </th>
+            <td>{{ title }}</td>
+            <td>{{ description }}</td>
+            </tr>
+            
+        </tbody>
+        </table>
+
+        </script>
     <!-- JS: MY SCRIPT -->
     <script src="script.js"></script>
 </body>

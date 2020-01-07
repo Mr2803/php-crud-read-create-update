@@ -4,9 +4,33 @@
     box-sizing: border-box;
 }
 
+#myForm,
+#myForm2,
+#myForm3{
+    height:250px;
+}
 
-.box{
-    border : 1px solid ;
-    margin-top:10px;
-    text-align: center;
+.global{
+    display:flex;
+    flex-direction: column;
+}
+
+label{
+    margin : 0 !important;
+}
+
+table {
+  width: 100%;
+}
+
+table, th, td {
+  border: 1px solid lightgrey;
+  border-collapse: collapse;
+}
+
+tr th:first-child{
+    width:10%;
+}
+tr th:nth-child(2){
+    width:30%;
 }
