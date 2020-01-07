@@ -38,8 +38,8 @@
     <form id="myForm3">
         <h2>Elimina una stanza</h2>
         
-        <label for="id">id: </label>
-            <input type="text" name="id">
+        <label for="title">Stanza da eliminare: </label>
+            <input type="text" name="title">
             <input type="submit" name="submit" value="Elimina configurazione">
     </form>
 
