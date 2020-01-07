@@ -1,13 +1,13 @@
-function init() {
+function reset() {
 
-    getConfigurazioni();
-    console.log("helloworld")
+    var target = $("#container");
+    target.html('');
 }
 
-$(window).ready(init);
 
 function printConfigurazioni(data) {
 
+    reset();
      var target = $("#container");
 
     var template = $("#box-template").html();
@@ -39,3 +39,34 @@ function getConfigurazioni() {
         }
     });
 }
+
+function putNewConfigurazione() {
+
+    var me = $(this);
+    $.ajax({
+
+        url: "putNewConfigurazione.php",
+        method: "POST",
+        data: me.serialize(),
+        success: function (data) {
+            if (data) {
+
+                getConfigurazioni(data);
+            }
+        },
+        error: function (error) {
+
+            console.log("error", error);
+        }
+    });
+
+    return false;
+}
+
+function init() {
+
+    getConfigurazioni();
+    $("#myForm").submit(putNewConfigurazione);
+}
+$(window).ready(init);
+

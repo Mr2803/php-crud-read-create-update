@@ -14,10 +14,19 @@
 </head>
 
 <body>
+    
+    <form id="myForm">
+        <label for="title">Titolo:</label>
+        <input type="text" name="titolo" value="nuovo titolo"><br>
+        <label for="description">Descrizione:</label>
+        <input type="text" name="description" value="nuova descrizione"><br>
+        <input type="submit" name="submit" value="nuova configurazione">
+    </form>
+    
     <div id="container" class="container">
     </div>
 
-    
+
     <!-- JS: JQUERY -->
     <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 
