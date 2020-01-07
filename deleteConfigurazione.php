@@ -2,13 +2,11 @@
 
 header('Content-Type: application/json');
 
-list($title, $description,$id) = [
-    $_POST['title'],
-    $_POST['description'],
+list($id) = [
     $_POST['id']
 ];
 
-if (!$title || !$description || !$id) {
+if (!$id) {
 
     echo json_encode(-2);
     return;
@@ -20,7 +18,7 @@ $password = "root";
 $dbname = "hoteldb";
 
 $conn = new mysqli($server, $username, $password, $dbname);
-if ($conn-> connect_errno) {
+if ($conn->connect_errno) {
 
     echo json_encode(-1);
     return;
@@ -28,13 +26,11 @@ if ($conn-> connect_errno) {
 
 $sql = "
 
-      UPDATE configurazioni
-      SET title = ? , description = ?
-      WHERE id = ?
+      DELETE FROM configurazioni WHERE id=?
 
   ";
 $stmt = $conn->prepare($sql);
-$stmt->bind_param("ssi", $title, $description, $id);
+$stmt->bind_param("i",$id);
 
 $res = $stmt->execute();
 echo json_encode($res);

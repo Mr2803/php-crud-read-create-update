@@ -21,7 +21,7 @@
         <input type="text" name="title" value="nuovo titolo"><br>
         <label for="description">Descrizione:</label>
         <input type="text" name="description" value="nuova descrizione"><br>
-        <input type="submit" name="submit" value="nuova configurazione">
+        <input type="submit" name="submit" value="Nuova configurazione">
     </form>
 
     <form id="myForm2">
@@ -32,7 +32,15 @@
         <input type="text" name="description" value="nuova descrizione"><br>
         <label for="id">id: </label>
             <input type="text" name="id">
-            <input type="submit" name="submit" value="modifica configurazione">
+            <input type="submit" name="submit" value="Modifica configurazione">
+    </form>
+
+    <form id="myForm3">
+        <h2>Elimina una stanza</h2>
+        
+        <label for="id">id: </label>
+            <input type="text" name="id">
+            <input type="submit" name="submit" value="Elimina configurazione">
     </form>
 
     <div id="container" class="container">

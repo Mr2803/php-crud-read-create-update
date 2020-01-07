@@ -86,11 +86,35 @@ function updateConfigurazione() {
     return false;
 }
 
+function deleteConfigurazione() {
+
+    var me = $(this);
+    $.ajax({
+
+        url: "deleteConfigurazione.php",
+        method: "POST",
+        data: me.serialize(),
+        success: function (data) {
+            if (data) {
+
+                getConfigurazioni(data);
+            }
+        },
+        error: function (error) {
+
+            console.log("error", error);
+        }
+    });
+
+    return false;
+}
+
 function init() {
 
     getConfigurazioni();
     $("#myForm").submit(putNewConfigurazione);
     $("#myForm2").submit(updateConfigurazione);
+    $("#myForm3").submit(deleteConfigurazione);
 }
 $(window).ready(init);
 
