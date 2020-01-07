@@ -17,7 +17,7 @@
     
     <form id="myForm">
         <label for="title">Titolo:</label>
-        <input type="text" name="titolo" value="nuovo titolo"><br>
+        <input type="text" name="title" value="nuovo titolo"><br>
         <label for="description">Descrizione:</label>
         <input type="text" name="description" value="nuova descrizione"><br>
         <input type="submit" name="submit" value="nuova configurazione">
