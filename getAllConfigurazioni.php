@@ -31,5 +31,5 @@ while ($config = $res->fetch_assoc()) {
 
     $configs[] = $config;
 }
-
+$conn->close();
 echo json_encode($configs);

@@ -1,26 +1,32 @@
 function reset() {
 
     var target = $("#global_container");
-    target.html('');
+    var input = $("input")
+    target.html("");
+    input.val("")
 }
+
 
 
 function printConfigurazioni(data) {
 
-    reset();
+    reset()
+    
     var target = $("#global_container");
-
+    
     var template = $("#box-template").html();
     var compiled = Handlebars.compile(template);
-
+    
     for (var i = 0; i < data.length; i++) {
-
+        
         var config = data[i];
-
+        
         var configHTML = compiled(config);
-
+        
         target.append(configHTML);
     }
+    
+    
 }
 
 function getConfigurazioni() {
@@ -99,6 +105,7 @@ function deleteConfigurazione() {
 
                 getConfigurazioni(data);
             }
+            
         },
         error: function (error) {
 
@@ -116,5 +123,6 @@ function init() {
     $("#myForm2").submit(updateConfigurazione);
     $("#myForm3").submit(deleteConfigurazione);
 }
+
 $(window).ready(init);
 

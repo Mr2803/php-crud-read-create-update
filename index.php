@@ -23,14 +23,10 @@
                 <h2>Aggiungi nuova configurazione</h2>
                 <form id="myForm" class="d-flex flex-column justify-content-between">
                     <div class="global">
-
-                        <label for="title">Titolo:</label>
-                        <input type="text" name="title" value=""><br>
+                        <input type="text" name="title" value="" placeholder="Titolo">
                     </div>
                     <div class="global">
-
-                        <label for="description">Descrizione:</label>
-                        <input type="text" name="description" value=""><br>
+                        <input type="text" name="description" value="" placeholder="Descrizione">
                     </div>
                     <button class="btn btn-primary" type="submit">Nuova configurazione</button>
                 </form>
@@ -39,18 +35,13 @@
                 <h2>Modifica una configurazione</h2>
                 <form id="myForm2" class="d-flex flex-column justify-content-between">
                     <div class="global">
-                        <label for="title">Titolo:</label>
-                        <input type="text" name="title" value=""><br>
+                        <input type="text" name="title" value="" placeholder="Titolo">
                     </div>
                     <div class="global">
-
-                        <label for="description">Descrizione:</label>
-                        <input type="text" name="description" value=""><br>
+                        <input type="text" name="description" value="" placeholder="Descrizione">
                     </div>
                     <div class="global">
-
-                        <label for="id">ID: </label>
-                        <input type="text" name="id">
+                        <input type="text" name="id" placeholder="ID">
                     </div>
                     <button class="btn btn-success" type="submit">Aggiorna configurazione</button>
                 </form>
@@ -59,9 +50,7 @@
                 <h2>Elimina una configurazione</h2>
                 <form id="myForm3" class="d-flex flex-column justify-content-between">
                     <div class="global">
-
-                        <label for="id">ID: </label>
-                        <input type="text" name="id">
+                        <input type="text" name="id" placeholder="ID">
                     </div>
                     <button class="btn btn-danger" type="submit">Elimina configurazione</button>
                 </form>
@@ -85,24 +74,31 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.1.0/handlebars.min.js" charset="utf-8"></script>
     <!-- TEMPLATE: MESSAGE MENU -->
     <script id="box-template" type="text/x-handlebars-template">
-    <table class="table">
-        <thead>
-            <tr>
-            <th scope="col">ID</th>
-            <th scope="col">TITOLO</th>
-            <th scope="col">DESCRIZIONE</th>
-            </tr>
-        </thead>
-        <div class="box">
-        <tbody>
-            <tr>
-            <th scope="row">[{{ id }}] </th>
-            <td>{{ title }}</td>
-            <td>{{ description }}</td>
-            </tr>
-            
-        </tbody>
-        </table>
+        <div class="container-fluid">
+        <div class="row">
+            <div class="col-12">
+
+                <table class="table">
+                    <thead>
+                        <tr>
+                        <th scope="col">ID</th>
+                        <th scope="col">TITOLO</th>
+                        <th scope="col">DESCRIZIONE</th>
+                        </tr>
+                    </thead>
+                    <div class="box">
+                    <tbody>
+                        <tr>
+                        <th scope="row">[{{ id }}] </th>
+                        <td>{{ title }}</td>
+                        <td>{{ description }}</td>
+                        </tr>
+                        
+                    </tbody>
+                    </table>
+            </div>
+        </div>
+    </div>
 
         </script>
     <!-- JS: MY SCRIPT -->
